@@ -6,6 +6,8 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
+const db = require('./models');
+const methodOverride = require('method-override');
 
 const SECRET_SESSION = process.env.SECRET_SESSION;
 
@@ -44,7 +46,24 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile', { id, name, email });
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.use('/auth', require('./controllers/auth'));
+app.use('/nhl', require('./controllers/nhl'));
 
 
 const PORT = process.env.PORT || 3000;
