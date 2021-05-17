@@ -1,16 +1,16 @@
 {
   "development": {
-    "database": "express_auth_dev",
+    "database": "dreamteam_dev",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "express_auth_test",
+    "database": "dreamteam_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "express_auth_production",
+    "database": "dreamteam_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
