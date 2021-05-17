@@ -8,6 +8,8 @@ const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const db = require('./models');
 const methodOverride = require('method-override');
+const { default: axios } = require('axios');
+const { response } = require('express');
 
 const SECRET_SESSION = process.env.SECRET_SESSION;
 
@@ -45,6 +47,10 @@ app.get('/profile', isLoggedIn, (req, res) => {
   const { id, name, email } = req.user.get();
   res.render('profile', { id, name, email });
 });
+
+
+
+
 
 
 
