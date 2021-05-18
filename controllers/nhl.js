@@ -8,15 +8,42 @@ const axios = require('axios');
 
 
 
+
+
 router.get('/', function(req, res) {
-    let teamsUrl = 'https://statsapi.web.nhl.com/api/v1/teams/';
+  let teamsUrl = 'https://statsapi.web.nhl.com/api/v1/teams/';
+
+  axios.get(teamsUrl).then(response => {
+    let nhlTeams = response.data.teams
   
-    axios.get(teamsUrl).then(response => {
-      let teams = response.data.results
-      res.render('nhl/index', {teams: teams});
-    });
+    
+    
+    res.render('nhl/index.ejs', {nhlTeams: nhlTeams});
+  });
+  
+
 
 });
+
+
+
+// router.get('/', function(req, res) {
+//   db.nhlTeams.findAll()
+//   .then(foundNhlTeam => {
+//     res.render('nhl/index.ejs', {faveList: foundNhlTeam} )
+//   })
+// });
+
+// router.post('/', function(req, res) {
+//   db.nhlTeam.create(req.body)
+//   .then(createdNhlTeam => {
+//     res.redirect('/nhl')
+//   })
+// });
+
+
+
+
 
 
 

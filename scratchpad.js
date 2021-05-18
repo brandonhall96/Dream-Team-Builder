@@ -60,4 +60,16 @@ function fetchCapitalsPlayers() {
     
 };
 
-fetchCapitalsPlayers();
+// fetchCapitalsPlayers();
+
+function fetchTeamNames() {
+    db.team.findAll()
+    .then(team => {
+        console.log(team)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+};
+
+fetchTeamNames();
