@@ -1,7 +1,16 @@
 <div class="container">
     <h1 class="text-center">The Original 31 Teams</h1>
     <p class="text-center">
-      <a href="/nhl/index">Favorites</a>
+      <a href="/nhl">Favorites</a>
     </p>
 
-    
+    <% teams.forEach(function(teams) { %>
+        <div class="well">                       
+          <h2><%= teams.name %></h2>
+          <form method="POST" action="/nhl">  
+            <input hidden type="text" name="name" value="<%= teams.name %>">
+            <button class="btn btn-primary" type="submit">Add to Favorite Team</button>
+          </form>
+        </div>
+      <% }); %>
+    </div>
