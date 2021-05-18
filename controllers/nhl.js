@@ -20,10 +20,25 @@ router.get('/', function(req, res) {
     
     res.render('nhl/index.ejs', {nhlTeams: nhlTeams});
   });
+});
   
 
-
+router.get('/show', function(req, res) {
+  db.team.findAll()
+ 
+  then(foundTeams => {
+    res.render('show', {faveList: foundTeams})
+  })
 });
+
+router.post('/result', function(req, res) {
+  db.team.create(req.body)
+  .then(createdTeam => {
+    res.redirect('/nhl')
+  })
+  console.log(req.body)
+});
+
 
 
 
