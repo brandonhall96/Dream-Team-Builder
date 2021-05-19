@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="text-center">Created Players</h1>
+
+  <% playerList.forEach(player =>{ %>
+  <div class="well">
+    <h2><%= player.lastName %></h2>
+    <h3><%= player.firstName %></h3>
+    <h3><%= player.position %></h3>
+    <h3><%= player.jerseyNumber %></h3>
+    <h3><%= player.salary %></h3>
+    <h3><%= player.teamId %></h3>
+
+    <form method="POST" action="/nhl/player/<%= player.id %>?_method=DELETE">
+      <input class="btn btn-primary" type="submit" value="Delete Player" />
+    </form>
+  </div>
+  <% }) %>
+</div>

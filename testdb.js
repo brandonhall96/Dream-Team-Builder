@@ -1,4 +1,5 @@
 const db = require('./models');
+const axios = require('axios')
 
 
 
@@ -72,4 +73,21 @@ function fetchTeamNames() {
     })
 };
 
-fetchTeamNames();
+// fetchTeamNames();
+
+function fetchPlayer() {
+    db.people.findOne({where:{
+        lastName: 'Ovechkin'
+    }})
+    .then(Ovechkin => {
+        console.log(Ovechkin)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+};
+
+fetchPlayer();
+
+
+app.use('/nhl', require('./controllers/nhl'));
