@@ -7,13 +7,17 @@
     <% nhlTeams.forEach(function(nhlTeam) { %>
         <div class="well">                       
           <h2><%= nhlTeam.name %></h2>
+          <h3><%= nhlTeam.division.name %></h3>
+         
           <form method="POST" action="/nhl">  
-            <input hidden type="text" name="name" value="<%= nhlTeam.name %>">
+            <input hidden type="text" name="teamName" value="<%= nhlTeam.name %>">
+            <input hidden type="text" name="city" value="<%= nhlTeam.division.name %>">
+           
             <button class="btn btn-primary" type="submit">Add to Favorite Team</button>
           </form>
         </div>
       <% }); %>
     </div>
 
-    <h1>Favorite Teams</h1>
+  
 

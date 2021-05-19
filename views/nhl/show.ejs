@@ -2,9 +2,11 @@
 
 <% faveList.forEach(nhlTeam =>{ %>
     <li>
-        <%= nhlTeam.name %>
-        <form method='POST' action="/nhl<%= nhlTeam.id %>?_method=DELETE"> 
-        <input type="hidden" name="name" value='<%= nhlTeam.name%>'>
+        <%= nhlTeam.teamName %>
+        
+        <form method='POST' action="/nhl<%= nhlTeam.teamName %>?_method=DELETE"> 
+        <input type="hidden" name="teamName" value='<%= nhlTeam.teamName%>'>
+        
         <input type="submit" value="Delete Favorite">
     </form>
     </li>
