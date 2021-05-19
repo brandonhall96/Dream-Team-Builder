@@ -2,8 +2,39 @@ nav ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: .3em;
+  font-size: 20px;
 }
 
 h1 {
   color: chartreuse;
+}
+
+body {
+  background-color: rgb(106, 197, 244);
+  color: rgb(255, 102, 50);
+  font-family: 'Bebas Neue', cursive;
+}
+
+a {
+  color: chartreuse;
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 102, 50);
+}
+
+.well {
+
+  margin-bottom: 25px;
+}
+
+.login {
+  font-size: 100px;
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  /* display: inline-block; */
+  margin-top: 100px;
+  
+}
+
+#logintext {
+  font-size: 80px;
 }

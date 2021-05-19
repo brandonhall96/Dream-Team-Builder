@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require('../config/ppConfig');
 const db = require('../models');
 const axios = require('axios');
+const SECRET_SESSION = process.env.SECRET_SESSION;
 
 
 

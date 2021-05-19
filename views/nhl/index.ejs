@@ -8,10 +8,13 @@
         <div class="well">                       
           <h2><%= nhlTeam.name %></h2>
           <h3><%= nhlTeam.division.name %></h3>
+          <h3><a href="<%= nhlTeam.officialSiteUrl %>">Team Site</a></h3>
+
          
           <form method="POST" action="/nhl">  
             <input hidden type="text" name="teamName" value="<%= nhlTeam.name %>">
             <input hidden type="text" name="city" value="<%= nhlTeam.division.name %>">
+            <input hidden type="text" name="link" value="<%= nhlTeam.officialSiteUrl %>">
            
             <button class="btn btn-primary" type="submit">Add to Favorite Team</button>
           </form>

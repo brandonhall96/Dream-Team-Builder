@@ -19,7 +19,7 @@ router.get('/logout', (req, res) => {
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
+  successRedirect: '/nhl',
   failureRedirect: '/auth/login',
   successFlash: 'Welcome back ...',
   failureFlash: 'Either email or password is incorrect. Please try again.'
