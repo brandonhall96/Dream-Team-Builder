@@ -40,7 +40,6 @@ router.get('/create', (req, res) => {
   res.render('nhl/create')
 })
   
-
 router.get('/show', function(req, res) {
   db.team.findAll()
  
@@ -48,42 +47,6 @@ router.get('/show', function(req, res) {
     res.render('nhl/show', {faveList: foundTeams})
   })
 });
-
-
-
-
-router.get('/newplayer', isLoggedIn, (req, res) => {
-  res.render('nhl/newplayer.ejs')
-})
-
-router.post('/newplayer', (req, res) => {
-  db.player.create(req.body)
-  .then(createdPlayer => {
-    console.log(createdPlayer.get())
-    res.redirect('/nhl/showplayer')
-  })
-  .catch(err => {
-    console.log(err)
-  })
-
-});
-
-router.get('/showplayer', (req, res) => {
-  db.player.findAll()
-  .then(foundPlayer => {
-    res.render('nhl/showplayer.ejs', {playerList: foundPlayer})
-  })
-
-});
-
-
-
-
-
-
-
-
-
 
 
 
