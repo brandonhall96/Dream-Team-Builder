@@ -8,13 +8,11 @@
         <h3><a href="<%= nhlTeam.link %>">Team Site</a></h3>
   
         
-        <form method='POST' action="/nhl<%= nhlTeam.teamId %>?_method=DELETE"> 
-        <input type="hidden" name="teamName" value='<%= nhlTeam.teamName%>'>
-        <input type="hidden" name="city" value='<%= nhlTeam.city%>'>
-        <input type="hidden" name="link" value='<%= nhlTeam.link%>'>
+        <form method='POST' action="/nhl/<%= nhlTeam.id %>?_method=DELETE"> 
+            <input class="btn btn-primary" type="submit" value="Delete">
+       
       
         
-        <input class="btn btn-primary" type="submit" value="Delete Favorite">
     </form>
     </div>
 <% }) %> 

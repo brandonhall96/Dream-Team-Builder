@@ -25,14 +25,17 @@ router.get('/', function(req, res) {
   });
 });
 
+
+
+
 router.post('/', function(req, res) {
   db.team.create(req.body)
   .then(createdTeam => {
     console.log(createdTeam.get())
     res.redirect('/nhl/show')
   })
-  console.log(req.body)
-  res.redirect('nhl/show')
+  // console.log(req.body)
+  // res.redirect('nhl/show')
   
 })
 
@@ -55,9 +58,16 @@ router.delete('/:teamId', (req,res) =>{
   }})
   .then(deletedTeam=>{
     console.log(deletedTeam)
-    res.redirect('/show')
+    res.redirect('/nhl/show')
   })
 })
+
+
+// router.delete('/:idx', (req,res) =>{
+//   res.send('/nhl delete' + )
+
+
+// });
 
 
 
