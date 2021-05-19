@@ -2,7 +2,8 @@ nav ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: .3em;
-  font-size: 20px;
+  font-size: 30px;
+
 }
 
 h1 {
@@ -37,4 +38,13 @@ a {
 
 #logintext {
   font-size: 80px;
+}
+
+.mainh1 {
+  font-size: 80px;
+  margin-left: .3em;
+}
+#loginheader {
+  font-size: 60px;
+  margin-left: .3em;
 }
