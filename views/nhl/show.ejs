@@ -8,7 +8,7 @@
         <h3><a href="<%= nhlTeam.link %>">Team Site</a></h3>
   
         
-        <form method='POST' action="/nhl<%= nhlTeam.teamName %>?_method=DELETE"> 
+        <form method='POST' action="/nhl<%= nhlTeam.teamId %>?_method=DELETE"> 
         <input type="hidden" name="teamName" value='<%= nhlTeam.teamName%>'>
         <input type="hidden" name="city" value='<%= nhlTeam.city%>'>
         <input type="hidden" name="link" value='<%= nhlTeam.link%>'>

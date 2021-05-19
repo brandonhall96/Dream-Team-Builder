@@ -48,7 +48,16 @@ router.get('/show', function(req, res) {
   })
 });
 
-
+router.delete('/:teamId', (req,res) =>{
+  db.team.destroy({where: {
+    id: req.params.teamId
+    
+  }})
+  .then(deletedTeam=>{
+    console.log(deletedTeam)
+    res.redirect('/show')
+  })
+})
 
 
 

@@ -10,7 +10,7 @@
     <h3><%= player.salary %></h3>
     <h3><%= player.teamId %></h3>
 
-    <form method="POST" action="/nhl/player/<%= player.id %>?_method=DELETE">
+    <form method="POST" action="/player<%= player.id %>?_method=DELETE">
       <input class="btn btn-primary" type="submit" value="Delete Player" />
     </form>
   </div>

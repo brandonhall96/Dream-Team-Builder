@@ -20,6 +20,7 @@ a {
   color: chartreuse;
   text-decoration: underline;
   text-decoration-color: rgb(255, 102, 50);
+  
 }
 
 .well {
@@ -47,4 +48,17 @@ a {
 #loginheader {
   font-size: 60px;
   margin-left: .3em;
+}
+
+.profileData {
+  margin-left: 80px;
+}
+
+.profileHeaders {
+  margin-left: 80px;
+}
+
+.profileNavs {
+  display: inline-block;
+  font-size: 60px;
 }
