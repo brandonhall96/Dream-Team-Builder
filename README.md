@@ -10,5 +10,8 @@ https://github.com/brandonhall96/Dream-team-builder/
 
 1. First you must login or create an account to become a registered user
 2. You will then be redirected to your own profile page
-3. From there you have choices to view stats or create a player / team
-4. 
+3. From there you have choices a few choices view stats or create a player
+4. Wherever you land there will be a "Home" button take will direct you back
+
+## Start Up Screen
+![Starting screen](/public/photos/example1.jpeg)
