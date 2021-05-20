@@ -59,16 +59,68 @@ a {
 }
 
 .profileNavs {
-    display: flex;
-    /* grid-template-columns: 100px 100px 100px; */
-    /* grid-gap: 10px; */
-    background-color: #f4f3ee;
-    color: #444;
-    justify-content: space-around;
-    flex-direction: row;
-    align-content: center;
+  display: flex;
+  background-color: rgb(106, 197, 244);
+  color: #444;
+  justify-content: space-around;
+  flex-direction: row;
+  align-content: center;
    
    
   }
+
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 100px;
+  font-size: 35px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 250px;
+  text-decoration-color: red;
+  color: white;
+  text-shadow:2px 0 0 black,0 2px 0 black,-2px 0 0 black,0 -2px 0 black;
+  
+}
+
+.box.a {
+  background-image: url(https://cdn.wallpapersafari.com/67/54/VEXj60.jpg);
+  background-size: 400px 250px;
+
+}
+
+.box.b {
+  background-image: url(http://ssl.mlse.digital/leafs/downloads/leafsnation-andersen_1920x1080.jpg);
+  background-size: 430px 250px;
+  
+}
+
+.box.c {
+  background-image: url(https://www.nawpic.com/media/2020/hockey-nawpic-12.jpg);
+  background-size: 415px 275px;
+}
+
+.box.d {
+  background-image: url(https://media.istockphoto.com/photos/outdoor-hockey-rink-at-night-picture-id529098127?k=6&m=529098127&s=170667a&w=0&h=Rk6Cbz7T9h6d5n5g3O874jsX2KJbQf2i_oA3qFlIynw=);
+  background-size: 400px 250px;
+}
+
+.box.e {
+  background-image: url(https://media.purehockey.com/q_auto,f_auto,fl_lossy/v1560369107/wp-blog/hockey-stick-blade-curves.jpg);
+  background-size: 475px 275px;
+
+  
+}
+
+.box.f {
+  background-image: url(https://photos.smugmug.com/Sports/NHL-Hockey-Photography/i-z8dTrQ2/2/809d74d3/L/Phillip%27s%20Arena-L.jpg);
+  background-size: 400px 250px;
+}
+
+
 
 
