@@ -100,5 +100,19 @@ function deleteRosters() {
     })
 }
 
-deleteRosters();
+// deleteRosters();
+
+function fetchLwPlayers() {
+    db.roster.findAll({where: {
+        position: 'LW'
+    }})
+    .then(foundLW => {
+        console.log(foundLW)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+};
+
+fetchLwPlayers();
 

@@ -42,6 +42,12 @@ router.post('/', function(req, res) {
 
 
 router.get('/create', (req, res) => {
+  db.roster.findAll({where: {
+    position: 'LW'
+  }})
+  .then(foundLW => {
+  
+  })
   res.render('nhl/create.ejs')
 })
 

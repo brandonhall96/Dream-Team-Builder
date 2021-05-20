@@ -21,70 +21,24 @@
     
 </form>
 
+<form action="/player" method="POST">
+    <label for="fullName">Full Name</label>
+    <input required type="text" id="fullName" name="fullName">
 
-<form action="/nhl" method="POST">
+    <label for="jerseyNumber">Jersey Number</label>
+    <input required type="text" id="jerseyNumber" name="jerseyNumber">
 
-    <label for="leftWing">Select Left Wing</label>
+    <label for="position">Position</label>
+    <input required type="text" id="position" name="position">
+
+    <label for="careerPoints">Total Points</label>
+    <input required type="text" id="careerPoints" name="careerPoints">
+
+    <label for="currentTeam">Current Team</label>
+    <input required type="text" id="currentTeam" name="currentTeam">
+
+
+    <button type="submit">Submit Player</button>
     
-    <select name="leftWing" id="leftWing">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
-    
-    
-    <label for="center">Select Center</label>
-    
-    <select name="center" id="center">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
-    
-    
-    <label for="rightWing">Select Right Wing</label>
-    
-    <select name="rightWing" id="rightWing">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
-    
-    
-    <label for="leftDefense">Select Defense</label>
-    
-    <select name="leftDefense" id="leftDefense">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
-    
-    
-    <label for="rightDefense">Select Defense</label>
-    
-    <select name="rightDefense" id="rightDefense">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
-    
-    
-    <label for="startGoalie">Select Goalie</label>
-    
-    <select name="startGoalie" id="startGoalie">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
-    
-    
-    
-    <button class="createButton" type="submit">Create Team!</button>
-    
-    </form>
+</form>
+
