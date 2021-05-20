@@ -21,7 +21,6 @@ router.get('/', isLoggedIn, (req, res) => {
     .catch(err => {
       console.log(err)
     })
-  
   });
   
   router.get('/showplayer', (req, res) => {
@@ -29,8 +28,8 @@ router.get('/', isLoggedIn, (req, res) => {
     .then(foundPlayer => {
       res.render('player/showplayer.ejs', {playerList: foundPlayer})
     })
-  
   });
+  
   
   
  

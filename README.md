@@ -15,3 +15,89 @@ https://github.com/brandonhall96/Dream-team-builder/
 
 ## Start Up Screen
 ![Starting screen](/public/photos/example1.jpeg)
+
+# How it works
+
+The program uses Express which allows us to create routes to different pages that the users can access and allows us to use CRUD, in which a user can create their own player or delete a favorite team etc, Express and Axios also allows us to implement APIs to pull in all the data we need and users are looking for. Sequelize and Postgres were used aswell to build our database and allows the ser to create and store their own personal data. Lastly, we used Passport which requires users to either login or create an account, that way all their data is protected and only accessible by them.
+
+# Making the .ejs layout
+```
+<body>
+  <%- include('partials/alerts') %>
+    <header>
+      <nav id="navbar">
+        <ul>
+          <% if(!currentUser) { %> 
+            <li><a href="/">Home</a></li>
+            <li><a href="/auth/signup">Signup</a></li>
+            <li><a href="/auth/login">Login</a></li>
+          <% } else { %> 
+          <li><a href="/profile">Home</a></li>
+          <li><a href="/auth/logout">Logout</a></li>
+          <li><a href="/nhl">Stats</a></li>
+          <li><a href="/player/showplayer">My Players</a></li>
+          <li><a href="/nhl/showteam">My Teams</a></li>
+          <% } %> 
+        </ul>
+      </nav>
+    </header>
+  <%- body %>
+</body>
+```
+
+# Adding our dependencies
+```
+require('dotenv').config();
+const express = require('express');
+const layouts = require('express-ejs-layouts');
+const app = express();
+const flash = require('connect-flash');
+const session = require('express-session');
+const passport = require('./config/ppConfig');
+const isLoggedIn = require('./middleware/isLoggedIn');
+const db = require('./models');
+const methodOverride = require('method-override');
+const { default: axios } = require('axios');
+const { response } = require('express');
+const SECRET_SESSION = process.env.SECRET_SESSION;
+```
+
+# Requesting data from our API
+```
+router.get('/', function(req, res) {
+  let teamsUrl = 'https://statsapi.web.nhl.com/api/v1/teams/';
+    axios.get(teamsUrl).then(response => {
+      let nhlTeams = response.data.teams
+        res.render('nhl/index.ejs', {nhlTeams: nhlTeams});
+  });
+});
+```
+
+# Building our controller routes
+```
+router.get('/', isLoggedIn, (req, res) => {
+    res.render('player/index.ejs')
+  })
+  
+  router.post('/', (req, res) => {
+    db.player.create(req.body)
+    .then(createdPlayer => {
+      console.log(createdPlayer.get())
+      res.redirect('/player/showplayer')
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  });
+  
+  router.get('/showplayer', (req, res) => {
+    db.player.findAll()
+    .then(foundPlayer => {
+      res.render('player/showplayer.ejs', {playerList: foundPlayer})
+    })
+  });
+  ```
+
+  
+
+    

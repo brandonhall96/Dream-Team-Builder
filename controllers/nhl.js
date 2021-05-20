@@ -15,13 +15,9 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 router.get('/', function(req, res) {
   let teamsUrl = 'https://statsapi.web.nhl.com/api/v1/teams/';
-
-  axios.get(teamsUrl).then(response => {
-    let nhlTeams = response.data.teams
-  
-    
-    
-    res.render('nhl/index.ejs', {nhlTeams: nhlTeams});
+    axios.get(teamsUrl).then(response => {
+      let nhlTeams = response.data.teams
+        res.render('nhl/index.ejs', {nhlTeams: nhlTeams});
   });
 });
 
