@@ -87,7 +87,18 @@ function fetchPlayer() {
     })
 };
 
-fetchPlayer();
+// fetchPlayer();
 
 
-app.use('/nhl', require('./controllers/nhl'));
+function deleteRosters() {
+    db.roster.findAll()
+    .then(deletedRosters => {
+        console.log(deletedRosters)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
+deleteRosters();
+

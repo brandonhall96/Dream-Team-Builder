@@ -39,9 +39,32 @@ router.post('/', function(req, res) {
   
 })
 
+
+
 router.get('/create', (req, res) => {
-  res.render('nhl/create')
+  res.render('nhl/create.ejs')
 })
+
+router.post('/create', (req, res) => {
+  db.roster.create(req.body)
+  .then(createdRoster => {
+    console.log(createdRoster.get())
+    res.redirect('/nhl/showteam')
+
+  })
+})
+
+router.get('/showteam', (req, res) => {
+  db.roster.findAll().then(foundRosters => {
+    res.render('nhl/showteam.ejs', {rosterList: foundRosters})
+    
+  })
+
+})
+
+
+
+
   
 router.get('/show', function(req, res) {
   db.team.findAll()

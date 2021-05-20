@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="text-center">Created Team</h1>
+  
+    <% rosterList.forEach(roster =>{ %>
+    <div class="well">
+      <h2><%= roster.fullName %></h2>
+      <h3><%= roster.jerseyNumber %></h3>
+      <h3><%= roster.position %></h3>
+      <h3><%= roster.careerPoints %></h3>
+      <h3><%= roster.currentTeam %></h3>
+   
+  
+      <form method="POST" action="/nhl/<%= roster.id %>?_method=DELETE">
+        <input class="deleteTeam" type="submit" value="Delete Team" />
+      </form>
+    </div>
+    <% }) %>
+  </div>
+  

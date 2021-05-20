@@ -59,6 +59,16 @@ a {
 }
 
 .profileNavs {
-  display: inline-block;
-  font-size: 60px;
-}
+    display: flex;
+    /* grid-template-columns: 100px 100px 100px; */
+    /* grid-gap: 10px; */
+    background-color: #f4f3ee;
+    color: #444;
+    justify-content: space-around;
+    flex-direction: row;
+    align-content: center;
+   
+   
+  }
+
+

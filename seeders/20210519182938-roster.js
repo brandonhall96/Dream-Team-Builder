@@ -1,5 +1,5 @@
 'use strict';
-const player = require('../models/player');
+const player = require('../models/roster');
 
 const playerData = [
   {
