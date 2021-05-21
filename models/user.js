@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.user.hasMany(models.team);
-      models.user.hasMany(models.player)
+      // models.user.hasMany(models.player)
     }
   };
   user.init({

@@ -120,3 +120,19 @@ function fetchLwPlayers() {
 //     db.player.
 // }
 
+
+router.post('/', isLoggedIn, async function (req, res) {
+    try {
+      const foundUser = await db.user.findByPk(req.user.id)
+      const newTeam = await db.team.create(req.body)
+      const addedTeam = await foundUser.addTeam(newTeam)
+      console.log(addedTeam)
+      res.redirect('/nhl')
+      
+    } catch (error) {
+      res.redirect('/nhl')
+    }
+  
+  
+  
+  })

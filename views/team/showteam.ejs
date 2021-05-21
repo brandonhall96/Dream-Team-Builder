@@ -1,0 +1,21 @@
+<div class="container">
+    <h1 class="text-center">Created Teams</h1>
+  
+    <% teamList.forEach(team =>{ %>
+    <div class="well">
+      <h2><%= team.teamName %></h2>
+      <h3><%= team.city %></h3>
+      <h3><%= team.link %></h3>
+      <h3><%= team.venue %></h3>
+      <h3><%= team.founded %></h3>
+      
+  
+      <form method="POST" action="/team/<%= team.id %>?_method=DELETE">
+        <input class="btn btn-primary" type="submit" value="Delete">
+      </form>
+      
+      
+      
+    </div>
+    <% }) %>
+  </div>

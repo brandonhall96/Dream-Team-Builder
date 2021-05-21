@@ -45,7 +45,19 @@ The program uses Express which allows us to create routes to different pages tha
 </body>
 ```
 
-# Requesting data from our API using a GET route
+
+# Creating the 
+```
+
+
+
+
+
+
+
+
+
+# Requesting data from our API using Axios and a GET route
 ```
 router.get('/', function(req, res) {
   let teamsUrl = 'https://statsapi.web.nhl.com/api/v1/teams/';

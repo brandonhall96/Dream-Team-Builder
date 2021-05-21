@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 
 
 
-router.get('/', isLoggedIn, (req, res) => {
+router.get('/', (req, res) => {
     res.render('player/index.ejs')
   })
   
@@ -34,13 +34,13 @@ router.get('/', isLoggedIn, (req, res) => {
 
 
 
-  router.get('/showplayer', isLoggedIn, function(req, res) {
-    db.player.findAll()
+  // router.get('/showplayer', isLoggedIn, function(req, res) {
+  //   db.player.findAll()
    
-    .then(foundPlayer => {
-      res.render('player/showplayer', {playerList: foundPlayer})
-    })
-  });
+  //   .then(foundPlayer => {
+  //     res.render('player/showplayer', {playerList: foundPlayer})
+  //   })
+  // });
 
   router.delete('/:playerId', (req,res) =>{
     db.player.destroy({where: {

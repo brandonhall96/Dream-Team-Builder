@@ -22,15 +22,34 @@ router.get('/', function(req, res) {
 });
 
 
+
+
 router.post('/', function(req, res) {
   db.team.create(req.body)
   .then(createdTeam => {
     console.log(createdTeam.get())
     res.redirect('/nhl/show')
   })
+  // console.log(req.body)
+  // res.redirect('nhl/show')
+  
 })
-  
-  
+
+// router.post('/', isLoggedIn, async function (req, res) {
+//   try {
+//     const foundUser = await db.user.findByPk(req.user.id)
+//     const newTeam = await db.team.create(req.body)
+//     const addedTeam = await foundUser.addTeam(newTeam)
+//     console.log(addedTeam)
+//     res.redirect('/nhl')
+    
+//   } catch (error) {
+//     res.redirect('/nhl')
+//   }
+
+
+
+// })
 
 
 
@@ -65,7 +84,7 @@ router.get('/showteam', isLoggedIn, (req, res) => {
 
 
   
-router.get('/show', isLoggedIn, function(req, res) {
+router.get('/show', function(req, res) {
   db.team.findAll()
  
   .then(foundTeams => {
