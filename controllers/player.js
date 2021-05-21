@@ -41,9 +41,6 @@ router.get('/', isLoggedIn, (req, res) => {
     })
   });
 
-
-
-
   router.delete('/:playerId', (req,res) =>{
     db.player.destroy({where: {
       id: req.params.playerId

@@ -45,7 +45,7 @@ The program uses Express which allows us to create routes to different pages tha
 </body>
 ```
 
-# Requesting data from our API
+# Requesting data from our API using a GET route
 ```
 router.get('/', function(req, res) {
   let teamsUrl = 'https://statsapi.web.nhl.com/api/v1/teams/';
@@ -56,7 +56,7 @@ router.get('/', function(req, res) {
 });
 ```
 
-# Building our controller routes
+# Building GET and POST routes in our controller to create a player
 ```
 router.get('/', isLoggedIn, (req, res) => {
     res.render('player/index.ejs')
