@@ -7,8 +7,10 @@
     <% nhlTeams.forEach(function(nhlTeam) { %>
         <div class="well">                       
           <h2><%= nhlTeam.name %></h2>
-          <h3><%= nhlTeam.division.name %></h3>
-          <h3><a href="<%= nhlTeam.officialSiteUrl %>">Team Site</a></h3>
+          <h3>Conference: <%= nhlTeam.conference.name %></h3>
+          <h3>Division: <%= nhlTeam.division.name %></h3>
+          <h3>First Season: <%= nhlTeam.firstYearOfPlay %></h3>
+          <h3><a href="<%= nhlTeam.officialSiteUrl %>">Official Site</a></h3>
 
          
           <form method="POST" action="/nhl">  

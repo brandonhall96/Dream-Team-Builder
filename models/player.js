@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.player.belongsTo(models.team);
+      models.player.belongsTo(models.user);
     }
   };
   player.init({
