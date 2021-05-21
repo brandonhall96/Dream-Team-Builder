@@ -45,23 +45,6 @@ The program uses Express which allows us to create routes to different pages tha
 </body>
 ```
 
-# Adding our dependencies
-```
-require('dotenv').config();
-const express = require('express');
-const layouts = require('express-ejs-layouts');
-const app = express();
-const flash = require('connect-flash');
-const session = require('express-session');
-const passport = require('./config/ppConfig');
-const isLoggedIn = require('./middleware/isLoggedIn');
-const db = require('./models');
-const methodOverride = require('method-override');
-const { default: axios } = require('axios');
-const { response } = require('express');
-const SECRET_SESSION = process.env.SECRET_SESSION;
-```
-
 # Requesting data from our API
 ```
 router.get('/', function(req, res) {
