@@ -56,7 +56,7 @@ router.get('/', function(req, res) {
 });
 ```
 
-# Building GET and POST routes in our controller to create a player
+# Building GET and POST routes in our controller and using .create to make a player
 ```
 router.get('/', isLoggedIn, (req, res) => {
     res.render('player/index.ejs')
@@ -80,6 +80,26 @@ router.get('/', isLoggedIn, (req, res) => {
     })
   });
   ```
+
+# Using PUT to edit a created player
+```
+router.put('/:idx', (req, res) => {
+    db.player.update(req.body, {where: {
+      id: req.params.idx
+      
+    }})
+    .then(editedPlayer => {
+      
+      console.log(editedPlayer)
+      res.redirect('/player/showplayer')
+      
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/player/showplayer')
+    })
+})
+```
 
   
 
