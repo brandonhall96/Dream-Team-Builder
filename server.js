@@ -10,7 +10,6 @@ const db = require('./models');
 const methodOverride = require('method-override');
 const { default: axios } = require('axios');
 const { response } = require('express');
-
 const SECRET_SESSION = process.env.SECRET_SESSION;
 
 app.set('view engine', 'ejs');

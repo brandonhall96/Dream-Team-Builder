@@ -1,0 +1,28 @@
+<form method="POST" action="/player/<%=player.id%>/?_method=PUT">
+    <label>Last Name</label>
+    <input type="text" name="lastName" value="<%= player.lastName %>">
+
+    <label>First Name</label>
+    <input type="text" name="firstName" value="<%= player.firstName %>">
+
+    <label>Position</label>
+    <input type="text" name="position" value="<%= player.position %>">
+
+    <label>Jersey Number</label>
+    <input type="text" name="jerseyNumber" value="<%= player.jerseyNumber %>">
+
+
+
+    <input type="submit">
+</form>
+
+<ul>
+    <% editPlayers.forEach(function(player) { %>
+    <li><%= dino.name %> is a <%= dino.type %>
+        <a href="/dinosaurs/edit/<%= index %>">Edit</a>
+        <form method="POST" action="/dinosaurs/<%= index %>/?_method=DELETE">
+            <input type="submit" value="Delete">
+        </form>
+    </li>
+    <% }); %>
+  </ul>

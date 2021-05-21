@@ -1,23 +1,39 @@
-<form action="/player" method="POST">
-    <label for="lastName">Last Name</label>
-    <input required type="text" id="lastName" name="lastName">
+<div class="signupdiv">
+    <form class="signup" action="/player" method="POST">
+        <label for="lastName">Last Name</label>
+        <input class="inp 1" required type="text" id="lastName" name="lastName">
 
-    <label for="firstName">First Name</label>
-    <input required type="text" id="firstName" name="firstName">
+        <label for="firstName">First Name</label>
+        <input class="inp 2" required type="text" id="firstName" name="firstName">
 
-    <label for="position">Position</label>
-    <input required type="text" id="position" name="position">
+        <label for="position">Position</label>
+        <input class="inp 3" required type="text" id="position" name="position">
 
-    <label for="jerseyNumber">Jersey Number</label>
-    <input required type="text" id="jerseyNumber" name="jerseyNumber">
+        <label for="jerseyNumber">Jersey Number</label>
+        <input class="inp 4" required type="text" id="jerseyNumber" name="jerseyNumber">
 
-    <label for="salary">Salary</label>
-    <input required type="text" id="salary" name="salary">
+        <label for="salary">Salary</label>
+        <input required class="inp 5" type="text" id="salary" name="salary">
 
-    <label for="teamId">Team</label>
-    <input required type="text" id="teamId" name="teamId">
 
-    <button type="submit">Submit Player</button>
-    
-</form>
+        <button class="supbutton" type="submit">Submit Player</button>
+        
+    </form>
+</div>
 
+<ul>
+    <% editPlayer.forEach(function(player) { %>
+        <h2><%= player.lastName %></h2>
+        <h3><%= player.firstName %></h3>
+        <h3><%= player.position %></h3>
+        <h3><%= player.jerseyNumber %></h3>
+        <h3><%= player.salary %></h3>
+
+
+        <a href="/player/edit/<%= index %>">Edit</a>
+        <form method="POST" action="/player/<%= index %>/?_method=DELETE">
+            <input type="submit" value="Delete">
+        </form>
+    </li>
+    <% }); %>
+  </ul>

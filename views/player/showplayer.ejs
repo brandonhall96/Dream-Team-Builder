@@ -8,11 +8,12 @@
     <h3><%= player.position %></h3>
     <h3><%= player.jerseyNumber %></h3>
     <h3><%= player.salary %></h3>
-    <h3><%= player.teamId %></h3>
+    
 
-    <form method="POST" action="/player<%= player.id %>?_method=DELETE">
-      <input class="btn btn-primary" type="submit" value="Delete Player" />
+    <form method="POST" action="/player/<%= player.id %>?_method=DELETE">
+      <input class="btn btn-primary" type="submit" value="Delete">
     </form>
+    
   </div>
   <% }) %>
 </div>

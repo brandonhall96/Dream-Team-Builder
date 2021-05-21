@@ -114,5 +114,9 @@ function fetchLwPlayers() {
     })
 };
 
-fetchLwPlayers();
+// fetchLwPlayers();
+
+// function deletePlayer() {
+//     db.player.
+// }
 
