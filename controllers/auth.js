@@ -38,7 +38,7 @@ router.post('/signup', async (req, res) => {
       console.log(`------ ${user.name} was created ------`);
       const successObject = {
         successRedirect: '../profile',
-        successFlash: `Welcome ${user.name}. Account was created.`
+        successFlash: `Welcome to the Thunderdome ${user.name}.`
       }
 
       passport.authenticate('local', successObject)(req, res);

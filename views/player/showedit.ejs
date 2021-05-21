@@ -7,9 +7,9 @@
         <h3><%= player.salary %></h3>
 
 
-        <a href="/player/edit/<%= index %>">Edit</a>
-        <form method="POST" action="/player/<%= index %>/?_method=DELETE">
-            <input type="submit" value="Delete">
+        
+        <form method="POST" action="/player/edit/<%= index %>/?_method=DELETE">
+            <input type="submit" value="Edit">
         </form>
     </li>
     <% }); %>

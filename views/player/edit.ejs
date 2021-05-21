@@ -1,4 +1,4 @@
-<form method="POST" action="/player/<%=player.id%>/?_method=PUT">
+<form method="POST" action="/player/<%=player.id%>?_method=PUT">
     <label>Last Name</label>
     <input type="text" name="lastName" value="<%= player.lastName %>">
 
@@ -13,6 +13,6 @@
 
 
 
-    <input type="submit">
+    <input type="submit" value="edit">
 </form>
 

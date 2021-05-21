@@ -5,6 +5,7 @@ const db = require('../models');
 const axios = require('axios');
 const { response } = require('express');
 const isLoggedIn = require('../middleware/isLoggedIn');
+const methodOverride = require('method-override');
 
 
 
@@ -53,61 +54,92 @@ router.get('/', isLoggedIn, (req, res) => {
   })
 
 
-  // router.post('/', (req, res) => {
-  //   db.player.create(req.body)
-  //   .then(createdPlayer => {
-  //     console.log(createdPlayer.get())
-  //     res.redirect('/player/showplayer')
-  //   })
-  //   .catch(err => {
-  //     console.log(err)
-  //   })
-  // });
-
-
-
-  router.get('/edit/:idx', (req, res) => {
-    db.player.update({where: {
-      id: req.params.idx
-    }})
-    .then(updatedPlayer => {
-      res.render('player/edit', {editPlayer: updatedPlayer})
-
-    })
-  });
-
-  router.put('/:idx', (req, res) => {
-
+  
+router.get('/edit/:idx', (req, res) => {
+  db.player.findOne({where: {
+    id: req.params.idx
+  }})
+  .then(foundPlayer => {
+    console.log(foundPlayer)
+    res.render('player/edit', {player: foundPlayer})
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/showplayers')
   })
 
-  router.post('/')
-    
-  
-      
+})
 
-  // router.put('/:idx', function(req, res){
-  //   const dinoData = JSON.parse(dinosaurs);
+router.put('/:idx', (req, res) => {
+    db.player.update(req.body, {where: {
+      id: req.params.idx
+      
+    }})
+    .then(editedPlayer => {
+      
+      console.log(editedPlayer)
+      res.redirect('/player/showplayer')
+      
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/player/showplayer')
+    })
+})
+  
+  
+  // router.get('/edit/:idx', /:idx(req, res) => {
   //   db.player.update({where: {
-  //     db.player.
+  //     id: req.params.idx
   //   }})
-  
-  //   //re-assign the name and type fields of the dinosaur to be editted
-  //   dinoData[req.params.idx].name = req.body.name;
-  //   dinoData[req.params.idx].type = req.body.type;
-  //   dinoData[req.params.idx].type = req.body.type;
-  //   dinoData[req.params.idx].type = req.body.type;
-  //   dinoData[req.params.idx].type = req.body.type;
-  
-  //    // save the editted dinosaurs to the data.json file
-  //   fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));
-  //   res.redirect('/dinosaurs');
+  //   .then(updatedPlayer => {
+  //     res.render('player/edit', {editPlayer: updatedPlayer})
+      
+  //   })
   // });
   
+  // router.put('/:idx', (req, res) => {
+    
+  // })
   
- 
+  // router.post('/')
   
-
-
+  
+  
+  
+  // router.put('/:idx', function(req, res){
+    //   const dinoData = JSON.parse(dinosaurs);
+    //   db.player.update({where: {
+      //     db.player.
+      //   }})
+      
+      //   //re-assign the name and type fields of the dinosaur to be editted
+      //   dinoData[req.params.idx].name = req.body.name;
+      //   dinoData[req.params.idx].type = req.body.type;
+      //   dinoData[req.params.idx].type = req.body.type;
+      //   dinoData[req.params.idx].type = req.body.type;
+      //   dinoData[req.params.idx].type = req.body.type;
+      
+      //    // save the editted dinosaurs to the data.json file
+      //   fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));
+      //   res.redirect('/dinosaurs');
+      // });
+      
+      // router.post('/', (req, res) => {
+      //   db.player.create(req.body)
+      //   .then(createdPlayer => {
+      //     console.log(createdPlayer.get())
+      //     res.redirect('/player/showplayer')
+      //   })
+      //   .catch(err => {
+      //     console.log(err)
+      //   })
+      // });
+      
+      
+      
+      
+      
 
 
 
