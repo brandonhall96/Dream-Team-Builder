@@ -37,7 +37,7 @@ router.post('/', function(req, res) {
 
 
 
-router.get('/create', (req, res) => {
+router.get('/create', isLoggedIn, (req, res) => {
   db.roster.findAll({where: {
     position: 'LW'
   }})
@@ -56,7 +56,7 @@ router.post('/create', (req, res) => {
   })
 })
 
-router.get('/showteam', (req, res) => {
+router.get('/showteam', isLoggedIn, (req, res) => {
   db.roster.findAll().then(foundRosters => {
     res.render('nhl/showteam.ejs', {rosterList: foundRosters})
     
@@ -68,7 +68,7 @@ router.get('/showteam', (req, res) => {
 
 
   
-router.get('/show', function(req, res) {
+router.get('/show', isLoggedIn, function(req, res) {
   db.team.findAll()
  
   .then(foundTeams => {

@@ -13,6 +13,9 @@
     <form method="POST" action="/player/<%= player.id %>?_method=DELETE">
       <input class="btn btn-primary" type="submit" value="Delete">
     </form>
+    <form method="POST" action="/player/<%= player.id %>?_method=PUT">
+      <input type="submit" name="" value="Edit">
+      </form>
     
   </div>
   <% }) %>

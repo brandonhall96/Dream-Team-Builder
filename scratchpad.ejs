@@ -42,3 +42,23 @@
     
 </form>
 
+
+
+<ul>
+    <% editPlayer.forEach(function(player) { %>
+        <h2><%= player.lastName %></h2>
+        <h3><%= player.firstName %></h3>
+        <h3><%= player.position %></h3>
+        <h3><%= player.jerseyNumber %></h3>
+        <h3><%= player.salary %></h3>
+
+
+        <a href="/player/edit/<%= index %>">Edit</a>
+        <form method="POST" action="/player/<%= index %>/?_method=DELETE">
+            <input type="submit" value="Delete">
+        </form>
+    </li>
+    <% }); %>
+  </ul>
+
+

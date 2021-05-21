@@ -23,7 +23,7 @@ router.get('/', isLoggedIn, (req, res) => {
     })
   });
   
-  router.get('/showplayer', (req, res) => {
+  router.get('/showplayer', isLoggedIn, (req, res) => {
     db.player.findAll()
     .then(foundPlayer => {
       res.render('player/showplayer.ejs', {playerList: foundPlayer})
@@ -33,11 +33,11 @@ router.get('/', isLoggedIn, (req, res) => {
 
 
 
-  router.get('/showplayer', function(req, res) {
+  router.get('/showplayer', isLoggedIn, function(req, res) {
     db.player.findAll()
    
-    .then(foundPlayers => {
-      res.render('player/showplayer', {playerList: foundPlayers})
+    .then(foundPlayer => {
+      res.render('player/showplayer', {playerList: foundPlayer})
     })
   });
 
@@ -71,7 +71,7 @@ router.get('/', isLoggedIn, (req, res) => {
 
   router.get('/edit/:idx', (req, res) => {
     db.player.update({where: {
-      id: req.params.playerId
+      id: req.params.idx
     }})
     .then(updatedPlayer => {
       res.render('player/edit', {editPlayer: updatedPlayer})
@@ -82,6 +82,8 @@ router.get('/', isLoggedIn, (req, res) => {
   router.put('/:idx', (req, res) => {
 
   })
+
+  router.post('/')
     
   
       
