@@ -7,14 +7,20 @@
         <input class="inp 2" required type="text" id="firstName" name="firstName">
 
         <label for="position">Position</label>
-        <input class="inp 3" required type="text" id="position" name="position">
+        <select required name="position" class="inp 5">
+            <option disabled selected value> --  select position  -- </option>
+            <option>Left Wing</option>
+            <option>Center</option>
+            <option>Right Wing</option>
+            <option>Defense</option>
+            <option>Goalie</option>
+        </select>
 
         <label for="jerseyNumber">Jersey Number</label>
-        <input class="inp 4" required type="text" id="jerseyNumber" name="jerseyNumber">
+        <input class="inp 4" required type="number" id="jerseyNumber" name="jerseyNumber">
 
         <label for="salary">Salary</label>
         <input required class="inp 5" type="text" id="salary" name="salary">
-
 
         <button class="supbutton" type="submit">Submit Player</button>
         
