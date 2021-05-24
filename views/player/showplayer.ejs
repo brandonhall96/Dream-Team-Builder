@@ -4,7 +4,7 @@
   <% playerList.forEach(player =>{ %>
   <div class="well">
     <h2><%= player.lastName %></h2>
-    <h3><%= player.firstName %></h3>
+    <h2><%= player.firstName %></h2>
     <h3><%= player.position %></h3>
     <h3><%= player.jerseyNumber %></h3>
     <h3><%= player.salary %></h3>
@@ -15,7 +15,7 @@
     </form>
     <br>
     <form method="GET" action="/player/edit/<%= player.id %>">
-      <input type="submit" name="" value="Edit">
+      <input type="submit" class="btn btn-primary" value="Edit">
       </form>
     
   </div>
