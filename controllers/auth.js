@@ -21,7 +21,7 @@ router.get('/logout', (req, res) => {
 router.post('/login', passport.authenticate('local', {
   successRedirect: '../profile',
   failureRedirect: '/auth/login',
-  successFlash: 'Welcome to the Thunderdome',
+  successFlash: 'Welcome to the Thunderdome...',
   failureFlash: 'Either email or password is incorrect. Please try again.'
 }));
 

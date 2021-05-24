@@ -6,6 +6,10 @@
 
 <% if (alerts.success) { %>
     <% alerts.success.forEach(msg => { %>
-     <div class="alert alert-success"><%= msg %></div>
+     <div class="alertsuccess">
+<span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
+<%= msg %>
+
+        </div>
     <% }) %>
 <% } %>
