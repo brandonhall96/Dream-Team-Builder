@@ -46,6 +46,18 @@ The program uses Express which allows us to create routes to different pages tha
 </body>
 ```
 
+# Player Model
+
+| Column Name | Data Type | Notes |
+| --------------- | ------------- | ------------------------------ |
+| id | Integer | Serial Primary Key, Auto-generated |
+| lastName | String | Must be provided |
+| firstNameName | String | Must be provided |
+| position | Integer | Must be provided |
+| jerseyNumber | Integer | Max-length of 2 |
+| createdAt | Date | Auto-generated |
+| updatedAt | Date | Auto-generated |
+
 # Creating login routes 
 ```
 router.get('/logout', (req, res) => {
