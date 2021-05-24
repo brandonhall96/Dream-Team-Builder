@@ -121,6 +121,12 @@ router.put('/:idx', (req, res) => {
 })
 ```
 
+# Future Considerations
+
+* More API data
+* More pages
+* Search options
+
   
 
     

@@ -58,7 +58,8 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/nhl', require('./controllers/nhl'));
-app.use('/player', require('./controllers/player'))
+app.use('/player', require('./controllers/player'));
+app.use('/team', require('./controllers/team'));
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
