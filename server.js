@@ -50,12 +50,6 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 
 
-
-
-
-
-
-
 app.use('/auth', require('./controllers/auth'));
 app.use('/nhl', require('./controllers/nhl'));
 app.use('/player', require('./controllers/player'));
