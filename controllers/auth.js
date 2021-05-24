@@ -26,12 +26,12 @@ router.post('/login', passport.authenticate('local', {
 }));
 
 router.post('/signup', async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, username, email, password } = req.body;
 
   try {
     const [user, created] = await db.user.findOrCreate({
       where: { email },
-      defaults: { name, password }
+      defaults: { name, username, password }
     });
 
     if (created) {

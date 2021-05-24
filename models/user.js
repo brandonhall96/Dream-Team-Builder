@@ -27,6 +27,15 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    username: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [1, 99],
+          msg: 'Usernsame must be between 1 and 99 characters'
+        }
+      }
+    },
     email: {
       type: DataTypes.STRING,
       validate: {
