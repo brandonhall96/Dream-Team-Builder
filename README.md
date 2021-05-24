@@ -52,9 +52,10 @@ The program uses Express which allows us to create routes to different pages tha
 | --------------- | ------------- | ------------------------------ |
 | id | Integer | Serial Primary Key, Auto-generated |
 | lastName | String | Must be provided |
-| firstNameName | String | Must be provided |
-| position | Integer | Must be provided |
+| firstName | String | Must be provided |
+| position | String | Must be provided |
 | jerseyNumber | Integer | Max-length of 2 |
+| salary | Integer | Must be provided |
 | createdAt | Date | Auto-generated |
 | updatedAt | Date | Auto-generated |
 
