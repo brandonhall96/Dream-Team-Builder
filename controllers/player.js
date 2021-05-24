@@ -32,16 +32,6 @@ router.get('/', (req, res) => {
   });
 
 
-
-
-  // router.get('/showplayer', isLoggedIn, function(req, res) {
-  //   db.player.findAll()
-   
-  //   .then(foundPlayer => {
-  //     res.render('player/showplayer', {playerList: foundPlayer})
-  //   })
-  // });
-
   router.delete('/:playerId', (req,res) =>{
     db.player.destroy({where: {
       id: req.params.playerId
@@ -87,89 +77,6 @@ router.put('/:idx', (req, res) => {
     })
 })
   
-  
-  // router.get('/edit/:idx', /:idx(req, res) => {
-  //   db.player.update({where: {
-  //     id: req.params.idx
-  //   }})
-  //   .then(updatedPlayer => {
-  //     res.render('player/edit', {editPlayer: updatedPlayer})
-      
-  //   })
-  // });
-  
-  // router.put('/:idx', (req, res) => {
-    
-  // })
-  
-  // router.post('/')
-  
-  
-  
-  
-  // router.put('/:idx', function(req, res){
-    //   const dinoData = JSON.parse(dinosaurs);
-    //   db.player.update({where: {
-      //     db.player.
-      //   }})
-      
-      //   //re-assign the name and type fields of the dinosaur to be editted
-      //   dinoData[req.params.idx].name = req.body.name;
-      //   dinoData[req.params.idx].type = req.body.type;
-      //   dinoData[req.params.idx].type = req.body.type;
-      //   dinoData[req.params.idx].type = req.body.type;
-      //   dinoData[req.params.idx].type = req.body.type;
-      
-      //    // save the editted dinosaurs to the data.json file
-      //   fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));
-      //   res.redirect('/dinosaurs');
-      // });
-      
-      // router.post('/', (req, res) => {
-      //   db.player.create(req.body)
-      //   .then(createdPlayer => {
-      //     console.log(createdPlayer.get())
-      //     res.redirect('/player/showplayer')
-      //   })
-      //   .catch(err => {
-      //     console.log(err)
-      //   })
-      // });
-      
-      
-      
-      
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router;

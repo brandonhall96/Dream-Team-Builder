@@ -30,27 +30,9 @@ router.post('/', function(req, res) {
     console.log(createdTeam.get())
     res.redirect('/nhl/show')
   })
-  // console.log(req.body)
-  // res.redirect('nhl/show')
+  
   
 })
-
-// router.post('/', isLoggedIn, async function (req, res) {
-//   try {
-//     const foundUser = await db.user.findByPk(req.user.id)
-//     const newTeam = await db.team.create(req.body)
-//     const addedTeam = await foundUser.addTeam(newTeam)
-//     console.log(addedTeam)
-//     res.redirect('/nhl')
-    
-//   } catch (error) {
-//     res.redirect('/nhl')
-//   }
-
-
-
-// })
-
 
 
 router.get('/create', isLoggedIn, (req, res) => {
@@ -102,108 +84,6 @@ router.delete('/:teamId', (req,res) =>{
     res.redirect('/nhl/show')
   })
 })
-
-
-// router.delete('/:idx', (req,res) =>{
-//   res.send('/nhl delete' + )
-
-
-// });
-
-
-
-// router.post('/create', (req, res) => {
-  //   db.people.create(req.body)
-  //   .then(createdPlayer => {
-    //     res.redirect('nhl/createdteam')
-    //   })
-    // });
-    
-    
-    
-    
-    
-    
-    
-//     router.get('/create', (req, res) => {
-//       res.render('nhl/create.ejs')
-//     })
-
-
-
-
-// router.get('/createdteam', (req, res) => {
-//   const searchFunction = req.query.searchPlayer
-//   axios.get(`https://statsapi.web.nhl.com/api/v1/people/"${searchFunction}"`)
-//   .then((response) => {
-//     res.render('nhl/createdteam.ejs', {people: response.data})
-//   })
-
-// })
-
-// router.get('/createdteam/:id', (req, res) => {
-//   const resultId = req.params.id
-//   axios.get(`https://statsapi.web.nhl.com/api/v1/people/${resultId}`)
-//   .then((response) => {
-//     res.render('')
-//   })
-
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// router.get('/create', function(req, res) {
-//   let playerId = req.params.id
-//   db.person.findOne({where: {
-//     id: playerId
-//   }
-//   })
-//   .then(foundPlayer => {
-//     let searchFunction = 
-  
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router;

@@ -7,7 +7,7 @@ nav ul li {
 }
 
 h1 {
-  color: chartreuse;
+  color: #9ef01a;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 }
 
 a {
-  color: chartreuse;
+  color: #9ef01a;
   text-decoration: underline;
   text-decoration-color: rgb(255, 102, 50);
   
@@ -213,7 +213,7 @@ a {
 }
 
 .well h3 {
-  color: chartreuse;
+  color: #9ef01a;
   
 }
 

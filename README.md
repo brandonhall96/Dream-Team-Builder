@@ -45,16 +45,23 @@ The program uses Express which allows us to create routes to different pages tha
 </body>
 ```
 
-
-# Creating the 
+# Creating login routes 
 ```
+router.get('/logout', (req, res) => {
+  req.logout();
+  req.flash('success', 'See you next time...');
+  res.redirect('/');
+});
 
-
-
-
-
-
-
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '../profile',
+  failureRedirect: '/auth/login',
+  successFlash: 'Welcome to the Thunderdome',
+  failureFlash: 'Either email or password is incorrect. Please try again.'
+}));
+```
+![Signup Screen](/public/photos/signup.jpeg)
+![Routing to Profile](/public/photos/profile.jpeg)
 
 
 # Requesting data from our API using Axios and a GET route
@@ -92,6 +99,7 @@ router.get('/', isLoggedIn, (req, res) => {
     })
   });
   ```
+  ![Create Player](/public/photos/createplayer.jpeg)
 
 # Using PUT to edit a created player
 ```
