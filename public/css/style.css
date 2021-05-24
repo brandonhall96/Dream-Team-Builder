@@ -218,15 +218,24 @@ a {
 }
 
 .alertsuccess {
-  background-color: rgb(255, 102, 50);
-  padding: 20px;
+  background-color: #38b000;
+  padding: 15px;
   color: white;
   font-size: 30px;
   font-family: 'Bebas Neue', cursive;
 }
 
+.alertfail {
+  background-color: #d00000;
+  padding: 15px;
+  color: white;
+  font-size: 30px;
+  font-family: 'Bebas Neue', cursive;
+
+}
+
 .close {
-  margin-left: -20px;
+  margin-right: 10px;
   color: white;
   font-weight: bold;
   float: right;
@@ -235,7 +244,6 @@ a {
   cursor: pointer;
   transition: 0.3s;
 }
-
 
 
 

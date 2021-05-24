@@ -1,6 +1,9 @@
 <% if (alerts.error) { %>
     <% alerts.error.forEach(msg => { %>
-     <div class="alert alert-danger"><%= msg %></div>
+     <div class="alertfail">
+         <span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
+         <%= msg %>
+        </div>
     <% }) %>
 <% } %>
 
