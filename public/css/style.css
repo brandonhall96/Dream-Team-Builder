@@ -218,7 +218,7 @@ a {
 }
 
 a:hover {
-  
+  text-shadow: 4px 4px 4px  rgb(255, 102, 50);
 
 }
 
